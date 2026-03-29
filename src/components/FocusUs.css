@@ -1,0 +1,118 @@
+.fu-stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: var(--grey);
+  border-bottom: 2px solid #222;
+}
+.fu-stat {
+  flex: 1;
+  max-width: 220px;
+  text-align: center;
+  padding: 1.6rem 1rem;
+  border-right: 1px solid #2a2a2a;
+}
+.fu-stat:last-child { border-right: none; }
+.fu-stat strong {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  color: var(--red);
+  display: block;
+  line-height: 1;
+}
+.fu-stat span {
+  font-family: var(--font-cond);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.fu-intro {
+  padding: 4rem 2rem 2rem;
+}
+.fu-intro-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: var(--white);
+  letter-spacing: 0.06em;
+  line-height: 1.05;
+  margin-bottom: 1.2rem;
+}
+.fu-intro-heading span { color: var(--red); }
+.fu-intro-text {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #bbb;
+  max-width: 700px;
+}
+
+.fu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem 2rem 4rem;
+}
+.fu-card {
+  background: var(--grey);
+  border: 1px solid #252525;
+  border-left: 4px solid var(--red);
+  padding: 2rem 1.5rem;
+  border-radius: 3px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.fu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(204,34,0,0.12);
+}
+.fu-card-num {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  color: rgba(204,34,0,0.18);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.fu-card h3 {
+  font-family: var(--font-cond);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+.fu-card p {
+  font-size: 0.87rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #aaa;
+  margin-bottom: 1.2rem;
+}
+.fu-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.fu-tags span {
+  font-family: var(--font-cond);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  background: rgba(204,34,0,0.1);
+  border: 1px solid rgba(204,34,0,0.25);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+@media (max-width: 900px) {
+  .fu-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .fu-grid { grid-template-columns: 1fr; }
+  .fu-stats-bar { flex-wrap: wrap; }
+  .fu-stat { flex: 1 1 50%; border-bottom: 1px solid #2a2a2a; }
+}

@@ -1,0 +1,492 @@
+/* ─── Variables ─── */
+:root {
+  --red:        #c0392b;
+  --red-dark:   #8b0000;
+  --red-bright: #e84545;
+  --red-glow:   rgba(192, 57, 43, 0.4);
+  --black:      #0d0d0d;
+  --black-mid:  #141414;
+  --black-soft: #1c1c1c;
+  --white:      #ffffff;
+  --white-dim:  rgba(255,255,255,0.65);
+  --white-faint:rgba(255,255,255,0.07);
+  --border:     rgba(255,255,255,0.08);
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-body:    "Barlow", sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ─── Footer Shell ─── */
+.footer {
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(139,0,0,0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 100%, rgba(192,57,43,0.18) 0%, transparent 55%),
+    linear-gradient(180deg, #111111 0%, #0a0a0a 100%);
+  font-family: var(--font-body);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle noise overlay */
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Top Decorative Bar ─── */
+.footer-topbar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 3px;
+  position: relative;
+}
+
+.topbar-line {
+  flex: 1;
+  height: 2px;
+}
+.topbar-line.left {
+  background: linear-gradient(to right, transparent, var(--red));
+}
+.topbar-line.right {
+  background: linear-gradient(to left, transparent, var(--red));
+}
+
+.topbar-gear {
+  font-size: 1rem;
+  color: var(--red-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--red);
+  border-radius: 50%;
+  background: var(--black-mid);
+  position: relative;
+  top: 0;
+  animation: spin-gear 10s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin-gear {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ─── Main Grid ─── */
+.footer-main {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.1fr;
+  gap: 0;
+  padding: 60px 64px 48px;
+}
+
+/* Column separators */
+.footer-col {
+  padding: 0 40px;
+  position: relative;
+}
+.footer-col:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--border) 30%, var(--border) 70%, transparent);
+}
+
+/* ─── Col 1: Brand ─── */
+.col-brand {
+  padding-left: 0;
+}
+
+.brand-logo-box {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.brand-logo-text {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.logo-mach {
+  color: var(--white);
+}
+
+.logo-auto {
+  color: var(--red-bright);
+  text-shadow: 0 0 20px var(--red-glow);
+}
+
+.logo-sub {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  color: var(--white-dim);
+  text-transform: uppercase;
+  margin-top: 2px;
+  border-top: 1px solid var(--border);
+  padding-top: 6px;
+}
+
+.brand-tagline {
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: var(--white-dim);
+  margin-bottom: 24px;
+}
+
+.brand-tagline em {
+  font-style: italic;
+  color: var(--red-bright);
+  opacity: 0.9;
+}
+
+.organiser-block {
+  margin-bottom: 24px;
+}
+
+.organiser-label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.organiser-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--white-faint);
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 4px;
+  border-left: 3px solid var(--red);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.organiser-name:hover {
+  background: rgba(192,57,43,0.1);
+  border-color: rgba(192,57,43,0.4);
+}
+
+.org-icon {
+  font-size: 1rem;
+}
+
+/* Social buttons */
+.social-row {
+  display: flex;
+  gap: 8px;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--white-dim);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--white-faint);
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.3s var(--ease-back);
+}
+
+.social-btn:hover {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red-bright);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--red-glow);
+}
+
+/* ─── Col 2: Quick Links ─── */
+.col-heading {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.heading-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--red), transparent);
+}
+
+.col-heading .heading-line:last-child {
+  background: linear-gradient(to left, var(--red), transparent);
+}
+
+.links-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  font-size: 0.9rem;
+  color: var(--white-dim);
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.3s var(--ease-back),
+    padding-left 0.25s ease;
+}
+
+.footer-link:hover {
+  background: rgba(192,57,43,0.1);
+  border-color: rgba(192,57,43,0.3);
+  color: var(--white);
+  padding-left: 18px;
+}
+
+.link-arrow {
+  font-size: 1.1rem;
+  color: var(--red-bright);
+  line-height: 1;
+  transition: transform 0.3s var(--ease-back);
+}
+
+.footer-link:hover .link-arrow {
+  transform: translateX(4px);
+}
+
+/* ─── Col 3: Contact ─── */
+.col-contact {
+  padding-right: 0;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--white-faint);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s var(--ease-back);
+}
+
+.contact-item:hover {
+  background: rgba(192,57,43,0.1);
+  border-color: rgba(192,57,43,0.35);
+  transform: translateX(4px);
+}
+
+.contact-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-phone {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--red-bright);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+.contact-phone:hover { color: var(--white); }
+
+.contact-sep {
+  color: var(--white-dim);
+  margin: 0 4px;
+}
+
+.contact-email {
+  font-size: 0.9rem;
+  color: var(--white-dim);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.contact-email:hover { color: var(--red-bright); }
+
+.contact-address {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--white-dim);
+  font-style: normal;
+}
+
+/* ─── Book Now Button ─── */
+.book-now-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 32px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--red-bright) 0%, var(--red-dark) 100%);
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 6px 28px var(--red-glow);
+  transition:
+    transform 0.3s var(--ease-back),
+    box-shadow 0.3s ease;
+}
+
+.book-now-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 40px rgba(192,57,43,0.6);
+}
+
+.book-now-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-text {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255,255,255,0.18) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.55s ease;
+}
+
+.book-now-btn:hover .btn-shine {
+  transform: translateX(120%);
+}
+
+/* ─── Bottom Bar ─── */
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 64px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--white-dim);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.bottom-copy { letter-spacing: 0.02em; }
+
+.credit-link {
+  color: var(--red-bright);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+.credit-link:hover { color: var(--white); }
+
+/* ─── Responsive ─── */
+@media (max-width: 960px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 0;
+    padding: 48px 32px 36px;
+  }
+
+  .footer-col:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  .footer-col::after { display: none; }
+
+  .footer-col {
+    padding: 0 16px;
+  }
+
+  .col-brand { padding-left: 0; }
+  .col-contact { padding-right: 0; }
+}
+
+@media (max-width: 600px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    padding: 36px 20px 24px;
+  }
+
+  .footer-col {
+    padding: 0;
+  }
+
+  .footer-bottom {
+    padding: 16px 20px;
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+  }
+}
