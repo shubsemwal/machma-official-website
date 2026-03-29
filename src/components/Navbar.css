@@ -1,0 +1,202 @@
+/* ── Outer wrapper ── */
+.inv-card {
+  margin-top: 8px;                
+  width: 100%;
+  max-width: 720px;                  
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.inv-card--risen {
+  transform: translateY(-6px);
+}
+
+/* ── Card inner padding ── */
+.inv-card-inner {
+  position: relative;
+  padding: 28px 32px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Header ── */
+.inv-card-header {
+  position: relative;
+  text-align: center;
+  padding: 20px 16px;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.inv-card-eyebrow {
+  display: block;
+  font-size: clamp(0.6rem, 1.5vw, 0.72rem);
+  letter-spacing: 0.18em;
+  margin-bottom: 6px;
+}
+
+.inv-card-title {
+  font-size: clamp(1.35rem, 4vw, 2rem);
+  line-height: 1.2;
+  margin: 0 0 6px;
+}
+
+.inv-card-subtitle {
+  font-size: clamp(0.7rem, 2vw, 0.85rem);
+  margin: 0;
+}
+
+/* ── Info grid — 2-column by default ── */
+.inv-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 20px;
+}
+
+/* ── Each info block ── */
+.inv-info-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.inv-info-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.inv-info-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.inv-info-label {
+  display: block;
+  font-size: clamp(0.6rem, 1.5vw, 0.68rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  opacity: 0.6;
+}
+
+.inv-info-value {
+  display: block;
+  font-size: clamp(0.78rem, 2vw, 0.92rem);
+  line-height: 1.35;
+}
+
+.inv-info-note {
+  display: block;
+  font-size: clamp(0.62rem, 1.6vw, 0.72rem);
+  line-height: 1.4;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+.inv-info-link {
+  display: block;
+  font-size: clamp(0.7rem, 1.8vw, 0.82rem);
+  text-decoration: none;
+  margin-top: 2px;
+}
+
+/* ── CTAs ── */
+.inv-card-ctas {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.inv-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: clamp(0.72rem, 1.8vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.inv-cta:hover { opacity: 0.85; }
+
+/* ══════════════════════════════════════════
+   BREAKPOINTS
+   ══════════════════════════════════════════ */
+
+/* ── Tablet (≤ 640px) — stack grid to single column ── */
+@media (max-width: 640px) {
+  .inv-card-inner {
+    padding: 20px 18px 18px;
+    gap: 12px;
+  }
+
+  .inv-info-grid {
+    grid-template-columns: 1fr;   /* single column */
+    gap: 12px;
+  }
+
+  .inv-card-header {
+    padding: 16px 12px;
+  }
+
+  .inv-card-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .inv-cta {
+    justify-content: center;
+    padding: 11px 18px;
+  }
+}
+
+/* ── Mobile (≤ 400px) — tighter spacing ── */
+@media (max-width: 400px) {
+  .inv-card-inner {
+    padding: 16px 12px 14px;
+    gap: 10px;
+  }
+
+  .inv-card-title {
+    font-size: 1.25rem;
+  }
+
+  .inv-info-block {
+    gap: 8px;
+  }
+
+  .inv-info-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .inv-cta {
+    font-size: 0.75rem;
+    padding: 10px 14px;
+  }
+}
+
+/* ── Large screens (≥ 900px) ── */
+@media (min-width: 900px) {
+  .inv-card {
+    max-width: 760px;
+  }
+
+  .inv-info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 28px;
+  }
+}

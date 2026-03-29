@@ -10,44 +10,39 @@ import kwalityImg from "../assets/kwality.png";
 import laghuImg from "../assets/laghu-udhyog.png";
 import medeaImg from "../assets/medea-partner.png";
 
-/* ── Sponsor data — replace src with real logo paths ── */
+/* ── Sponsor data ── */
 const poweredBy = {
   name: "ALMTI",
   label: "Association of Ludhiana Machine Tool Industries",
-  src:almtImg
+  src: almtImg
 };
 
-const goldSponsors = [
-  { name: "Hindustan Hydraulics", src:ufitImg 
-  },
-  { name: "Bachan CNC",           src: bachanImg },
+const globalSponsor = [
+  { name: "Global", src: globalImg },
 ];
 
 /* Row 1 — slides LEFT (top marquee) */
 const silverRow1 = [
-  { name: "Jyoti",           src: globalImg },
-  { name: "NTAT Technologies",src: medeaImg },
-  { name: "Guru Kirpa Automation", src: kwalityImg },
-  { name: "Infused Systems",  src: laghuImg },
-  { name: "Bhavya Machines",  src: chamberImg },
+  { name: "Bachan CNC",  src: bachanImg },
+  { name: "Kwality",     src: kwalityImg },
+  { name: "Jaewoo",      src: jaewooImg },
 ];
 
 /* Row 2 — slides RIGHT (bottom marquee) */
 const silverRow2 = [
-  { name: "Jyoti",           src: globalImg },
-  { name: "NTAT Technologies",src: medeaImg },
-  { name: "Guru Kirpa Automation", src: kwalityImg },
-  { name: "Infused Systems",  src: laghuImg },
-  { name: "Bhavya Machines",  src: chamberImg },
+  { name: "Bachan CNC",  src: bachanImg },
+  { name: "Kwality",     src: kwalityImg },
+  { name: "Jaewoo",      src: jaewooImg },
 ];
 
 const partners = [
-  { tier: "Technology Partner", name: "BST TEC",  src: "://images..com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGlnaXRhbCUyMHRvb2xzfGVufDB8fDB8fHww" },
-  { tier: "Banking Partner",    name: "SIDBI",     src: ":" },
-  { tier: "Supported By",       name: "Laghu Udyog Sangha", src: ":" },
+  { tier: "Supported By",  name: "FICO",             src: ficoImg },
+  { tier: "Supported By",  name: "UFIT",             src: ufitImg },
+  { tier: "Supported By",  name: "Laghu Udyog",      src: laghuImg },
+  { tier: "Media Partner", name: "Jessica News IAP", src: medeaImg },
 ];
 
-/* ── Placeholder logo block (used when src is ":") ── */
+/* ── Placeholder logo block (used when src is missing) ── */
 function LogoBlock({ name, size = "md" }) {
   const initials = name
     .split(" ")
@@ -78,7 +73,6 @@ function SponsorPill({ sponsor, size = "md" }) {
 
 /* ── Infinite marquee track ── */
 function Marquee({ items, direction = "left", speed = 35, size = "md" }) {
-  // duplicate 4× so the strip never shows a gap
   const repeated = [...items, ...items, ...items, ...items];
   return (
     <div className={`sp-marquee sp-marquee--${direction}`}>
@@ -119,23 +113,23 @@ export default function MachmaSponsors() {
           <div className="sp-powered-rule" />
         </div>
 
-        {/* ══ GOLD SPONSORS ══ */}
+        {/* ══ GLOBAL SPONSOR ══ */}
         <div className="sp-tier-block">
           <div className="sp-tier-header">
             <div className="sp-tier-line" />
             <span className="sp-tier-badge sp-tier-badge--gold">
-              ★ Gold Sponsors
+              🌐 Global Sponsor
             </span>
             <div className="sp-tier-line" />
           </div>
           <div className="sp-gold-row">
-            {goldSponsors.map((s) => (
+            {globalSponsor.map((s) => (
               <SponsorPill key={s.name} sponsor={s} size="lg" />
             ))}
           </div>
         </div>
 
-        {/* ══ SILVER MARQUEE — ROW 1 (slides LEFT) ══ */}
+        {/* ══ SILVER MARQUEE ══ */}
         <div className="sp-tier-block">
           <div className="sp-tier-header">
             <div className="sp-tier-line" />
@@ -146,8 +140,6 @@ export default function MachmaSponsors() {
           </div>
 
           <Marquee items={silverRow1} direction="left"  speed={30} size="md" />
-
-          {/* ══ SILVER MARQUEE — ROW 2 (slides RIGHT — opposite) ══ */}
           <Marquee items={silverRow2} direction="right" speed={28} size="md" />
         </div>
 

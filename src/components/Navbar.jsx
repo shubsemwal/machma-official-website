@@ -1,22 +1,27 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import heroImage from "../assets/machma-expo-2026-main.jpeg";
+import "./Navbar.css";
 
 const navLinks = [
   { label: "HOME", href: "/" },
-  { label: "ABOUT US", href: "/about", hasDropdown: false },
+  { label: "ABOUT US", href: "/about" },
   { label: "FOCUS US", href: "/focus-us" },
-  { label: "PROMOTION", href: "/promotion", hasDropdown: false },
-  { label: "GALLERY", href: "/gallery", hasDropdown: false },
-  { label: "DOWNLOADS", href: "/downloads", hasDropdown: false },
+  { label: "PROMOTION", href: "/promotion" },
+  { label: "GALLERY", href: "/gallery" },
+  { label: "DOWNLOADS", href: "/downloads" },
+  { label: "BOOK NOW", href: "/book-now" },
 ];
 
 export default function Navbar({ logoImage = null }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <nav className="machma-nav">
-      <Link to="/" className="machma-logo-wrap">
+      {/* Logo */}
+      <Link to="/" className="machma-logo-wrap" onClick={closeMenu}>
         {logoImage ? (
           <img
             src={heroImage}
@@ -32,24 +37,30 @@ export default function Navbar({ logoImage = null }) {
         )}
       </Link>
 
+      {/* Hamburger */}
       <button
-        className="machma-hamburger"
+        className={`machma-hamburger ${menuOpen ? "is-open" : ""}`}
         onClick={() => setMenuOpen((o) => !o)}
+        aria-label="Toggle menu"
       >
         <span />
         <span />
         <span />
       </button>
 
+      {/* Nav links — closeMenu on every click */}
       <ul className={`machma-nav-links ${menuOpen ? "open" : ""}`}>
         {navLinks.map((link) => (
           <li key={link.label}>
-            <Link to={link.href}>{link.label}</Link>
+            <Link to={link.href} onClick={closeMenu}>
+              {link.label}
+            </Link>
           </li>
         ))}
       </ul>
 
-      <Link to="/book-now" className="machma-book-btn">
+      {/* Book Now CTA */}
+      <Link to="/book-now" className="machma-book-btn" onClick={closeMenu}>
         BOOK NOW
       </Link>
     </nav>

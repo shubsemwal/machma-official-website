@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./MachmaHero.css";
-import heroImage from "../assets/machma-expo-2026-main.jpeg";
+import heroImage from "../assets/frunt-face-logo.jpeg";
 
 export default function MachmaHero() {
   const heroRef = useRef(null);
