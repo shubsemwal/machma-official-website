@@ -39,7 +39,7 @@ const ExpoSection = () => {
           </h2>
 
           <p className="panel-body animate-in delay-2">
-            MACHMA Expo 2025 provides a perfect platform to exhibit your
+            MACHMA Expo 2026 provides a perfect platform to exhibit your
             products and services to a global audience. Engage with potential
             clients and partners while demonstrating your latest offerings.
           </p>

@@ -17,13 +17,13 @@ const Footer = () => {
           <div className="brand-logo-box">
             <span className="brand-logo-text">
               <span className="logo-mach">MACH</span>
-              <span className="logo-auto">AUTO</span>
+              <span className="logo-auto">EXPO</span>
             </span>
-            <span className="logo-sub">EXPO</span>
+            <span className="logo-sub">2026</span>
           </div>
 
           <p className="brand-tagline">
-            MachAuto is more than an exhibition –<br />
+            MACHMA-EXPO is more than an exhibition –<br />
             it is a gateway to growth.<br />
             <em>Don't just visit the future, exhibit it.</em>
           </p>
@@ -32,7 +32,7 @@ const Footer = () => {
             <span className="organiser-label">Organised By</span>
             <div className="organiser-name">
               <span className="org-icon">🏢</span>
-              Fortune Exhibitor &amp; Pvt. Ltd.
+              Fortune Exhibitor Pvt. Ltd.
             </div>
           </div>
 
@@ -91,16 +91,16 @@ const Footer = () => {
             <div className="contact-item">
               <span className="contact-icon">📞</span>
               <div>
-                <a href="tel:+919592048025" className="contact-phone">+91-00000-00000</a>
+                <a href="tel:+91-73409-90309" className="contact-phone">+91-73409-90309</a>
                 <span className="contact-sep"> / </span>
-                <a href="tel:+919876103835" className="contact-phone">+91-00000-00000</a>
+                <a href="tel:+91-77087066117" className="contact-phone">+91-77087066117</a>
               </div>
             </div>
 
             <div className="contact-item">
               <span className="contact-icon">✉</span>
-              <a href="mailto:info@machautoexpo.in" className="contact-email">
-                info@machautoexpo.in
+              <a href="mailto:info@MACHMA-EXPO.in" className="contact-email">
+                info@MACHMA-EXPO.in
               </a>
             </div>
 
@@ -124,7 +124,7 @@ const Footer = () => {
       {/* ── Bottom bar ── */}
       <div className="footer-bottom">
         <span className="bottom-copy">
-          © 2026 Fortune Exhibitor &amp; Pvt. Ltd. All rights reserved.
+          © 2026 Fortune Exhibitor Pvt. Ltd. All rights reserved.
         </span>
         <span className="bottom-credit">
           Created by <a href="#" className="credit-link">Growess Group</a>

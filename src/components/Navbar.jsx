@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import heroImage from "../assets/machma-expo-2026-main.jpeg";
+import pdfFile from "../assets/Machma-expopdf.pdf";
 import "./Navbar.css";
 
 const navLinks = [
@@ -9,11 +10,9 @@ const navLinks = [
   { label: "FOCUS US", href: "/focus-us" },
   { label: "PROMOTION", href: "/promotion" },
   { label: "GALLERY", href: "/gallery" },
-  { label: "DOWNLOADS", href: "/downloads" },
-  { label: "BOOK NOW", href: "/book-now" },
 ];
 
-export default function Navbar({ logoImage = null }) {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
@@ -22,25 +21,17 @@ export default function Navbar({ logoImage = null }) {
     <nav className="machma-nav">
       {/* Logo */}
       <Link to="/" className="machma-logo-wrap" onClick={closeMenu}>
-        {logoImage ? (
-          <img
-            src={heroImage}
-            alt="MACHMA Expo 2026"
-            className="machma-logo-img"
-          />
-        ) : (
-          <div className="machma-logo">
-            <span className="logo-edition">13th</span>
-            <span className="logo-main">MACHMA</span>
-            <span className="logo-sub">EXPO-2026</span>
-          </div>
-        )}
+        <img
+          src={heroImage}
+          alt="MACHMA Expo 2026"
+          className="machma-logo-img"
+        />
       </Link>
 
       {/* Hamburger */}
       <button
         className={`machma-hamburger ${menuOpen ? "is-open" : ""}`}
-        onClick={() => setMenuOpen((o) => !o)}
+        onClick={() => setMenuOpen((prev) => !prev)}
         aria-label="Toggle menu"
       >
         <span />
@@ -48,7 +39,7 @@ export default function Navbar({ logoImage = null }) {
         <span />
       </button>
 
-      {/* Nav links — closeMenu on every click */}
+      {/* Navigation Links */}
       <ul className={`machma-nav-links ${menuOpen ? "open" : ""}`}>
         {navLinks.map((link) => (
           <li key={link.label}>
@@ -57,12 +48,21 @@ export default function Navbar({ logoImage = null }) {
             </Link>
           </li>
         ))}
-      </ul>
 
-      {/* Book Now CTA */}
-      <Link to="/book-now" className="machma-book-btn" onClick={closeMenu}>
-        BOOK NOW
-      </Link>
+        {/* Download PDF */}
+        <li>
+          <a
+            href={pdfFile}
+            download="Machma-expopdf.pdf"
+            onClick={closeMenu}
+          >
+            DOWNLOADS
+          </a>
+        </li>
+
+        {/* Book Now Button */}
+      
+      </ul>
     </nav>
   );
 }

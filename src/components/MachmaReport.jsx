@@ -144,19 +144,19 @@ export default function MachmaReport() {
               <span className="mr-eyebrow">PAST EDITION HIGHLIGHTS</span>
               <h2 className="mr-title">
                 Show's Report :<br />
-                MACHMA <span className="mr-title--red">Expo 2024</span>
+                MACHMA <span className="mr-title--red">Expo 2026</span>
               </h2>
             </div>
             <div className="mr-header-right">
               <div className="mr-header-line" />
               <p className="mr-desc">
-                The success of 2024 laid the foundation for an even bigger
+                The success of 2026 laid the foundation for an even bigger
                 2026 edition. Here's a look at what made last year truly
                 remarkable — record footfall, unprecedented business, and
                 industry connections that lasted.
               </p>
               <div className="mr-badge">
-                <span>✦</span> MACHMA EXPO 2024 · LUDHIANA
+                <span>✦</span> MACHMA EXPO 2026 · LUDHIANA
               </div>
             </div>
           </div>

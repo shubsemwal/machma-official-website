@@ -3,9 +3,9 @@ import "./Gallery.css";
 
 // Replace src values with your real image paths e.g. "/assets/gallery/img1.jpg"
 const galleryItems = [
-  { id: 1, src: null, caption: "CNC Demo Floor — MACHMA 2024", category: "machines", wide: true },
+  { id: 1, src: null, caption: "CNC Demo Floor — MACHMA 2026", category: "machines", wide: true },
   { id: 2, src: null, caption: "Laser Cutting Live Demo",       category: "laser" },
-  { id: 3, src: null, caption: "Inauguration Ceremony 2024",    category: "ceremony" },
+  { id: 3, src: null, caption: "Inauguration Ceremony 2026",    category: "ceremony" },
   { id: 4, src: null, caption: "Robotics Pavilion",             category: "robots" },
   { id: 5, src: null, caption: "Visitor Footfall Day 1",        category: "visitors", wide: true },
   { id: 6, src: null, caption: "Precision Tools Display",       category: "machines" },

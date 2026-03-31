@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import indiaMap from "../assets/IndiaMap.png";
+import indiaMap from "../assets/Robo-img.jpeg";
 import "./MachmaAbout.css";
 
 const stats = [
@@ -59,47 +59,68 @@ export default function MachmaAbout({ exhibitionPhoto = null }) {
       <div className="ma-bg-dots" />
 
       <div className="ma-inner">
-
         {/* ══ LEFT – India Map ══ */}
         <div className="ma-map-col">
-  <div className="india-map-wrapper">
-    
-    <img 
+          <div className="india-map-wrapper">
+            {/* <img 
       src={indiaMap} 
       alt="India Map" 
       className="india-map-img"
-    />
-
-  </div>
-</div>
+    /> */}
+          </div>
+        </div>
 
         {/* ══ RIGHT – Content ══ */}
         <div className="ma-content-col">
-
           <div className="ma-heading-wrap">
             <span className="ma-eyebrow">13TH EDITION · DECEMBER 2026</span>
             <h2 className="ma-heading">
               The <em>13th Edition</em> of{" "}
-              <span className="ma-heading--accent">India's Largest</span>
-              <br />
-              Machine Tools &amp; Automation Expo
+              <span className="ma-heading--accent">India's Leading</span>
+              Exhibitor in Machine Tools, Automation Expo &amp; Laser Technology
             </h2>
             <div className="ma-heading-line" />
           </div>
 
           <div className="ma-desc-grid">
             <p className="ma-desc">
-              In December 2026, <strong>MACHMA Expo</strong> returns with its{" "}
-              <strong>13th edition</strong>, reaffirming its position as North
-              India's biggest machine tools and automation technology exhibition.
-              For over 12 successful years, MACHMA has been the platform of
-              choice for <strong>500+ global exhibitors</strong>.
+              <strong>Fortune Exhibitors Pvt. Ltd.</strong> believes in enriching your business
+              and life with new possibilities. Our Trade fairs & Exhibitions are
+              planned and customized to suit your business needs and help
+              generate the maximum footfalls and leads. Our endeavor as a
+              responsible entity in the business networking industry is to
+              ensure cost-effective, productive and thriving business returns
+              for our clients. Our mantra to business success is: Connect,
+              Network and Build your business; and we make it possible for you
+              through Trade fairs & Exhibitions. <strong>Fortune Exhibitors Pvt. Ltd.</strong>
+              firmly believes that technological empowerment is crucial for the
+              promotion of products and services in a dynamic business
+              environment. Besides offering a vibrant platform for showcasing
+              your business through Trade fairs & Exhibitions, we empower you
+              with the best professional marketing services appropriate for
+              sustained business growth — from conceptualization to planning and
+              execution. 
+              <br /> 
             </p>
             <p className="ma-desc">
               <strong>50,000+</strong> trade professionals and{" "}
-              <strong>10,000+</strong> innovative solutions. The upcoming edition
-              promises to be grander, sharper, and future‑focused — setting new
-              benchmarks in scale, innovation, and industrial impact.
+              <strong>10,000+</strong> innovative solutions. The upcoming
+              edition promises to be grander, sharper, and future‑focused —
+              setting new benchmarks in scale, innovation, and industrial
+              impact.
+              <br />  
+              <br />  
+              Our Mission at <strong>Fortune Exhibitors Pvt. Ltd.</strong> is to
+              support our clients in realizing their vision of achieving
+              business excellence through dedicated & customized Trade fairs &
+              Exhibitions.
+              Realizing business opportunities to address emerging
+              markets is one of the fundamental aspects of <strong>Fortune Exhibitors Pvt. Ltd.</strong> If you are a business visionary with plans to expand
+              your business, <strong>Fortune Exhibitors Pvt. Ltd.</strong> can offer you the
+              perfect platform, the business edge, and exposure required to make
+              it BIG. <strong>Fortune Exhibitors Pvt. Ltd.</strong> believes in empowering you
+              and your business effectively by offering a cost-effective and
+              need-based solution for growth and success.
             </p>
           </div>
 
@@ -111,7 +132,11 @@ export default function MachmaAbout({ exhibitionPhoto = null }) {
                 style={{ animationDelay: `${0.1 + i * 0.1}s` }}
               >
                 {s.hasPhoto && exhibitionPhoto && (
-                  <img src={exhibitionPhoto} alt="Exhibition" className="ma-stat-bg-photo" />
+                  <img
+                    src={exhibitionPhoto}
+                    alt="Exhibition"
+                    className="ma-stat-bg-photo"
+                  />
                 )}
                 <div className="ma-stat-inner">
                   <strong className="ma-stat-value">{s.value}</strong>
@@ -121,7 +146,6 @@ export default function MachmaAbout({ exhibitionPhoto = null }) {
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>

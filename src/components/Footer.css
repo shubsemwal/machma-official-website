@@ -155,7 +155,6 @@
 }
 
 .brand-tagline em {
-  font-style: italic;
   color: var(--red-bright);
   opacity: 0.9;
 }

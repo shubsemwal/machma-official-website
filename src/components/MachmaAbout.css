@@ -87,7 +87,9 @@
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 5px;
   object-fit: contain;
+  padding-right: 50px;
 }
 
 /* ============================= */
@@ -361,7 +363,7 @@
 }
 .ma-heading--accent {
   color: var(--red);
-  font-style: italic;
+ 
 }
 .ma-heading-line {
   width: 60px;
