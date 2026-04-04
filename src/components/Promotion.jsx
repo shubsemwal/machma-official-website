@@ -83,45 +83,8 @@ export default function Promotion({ logoImage = null }) {
         <span>EARLY BIRD OFFER ENDS 30 AUGUST 2026 — Book Now & Save Up To 25%</span>
       </div>
 
-      {/* PACKAGES */}
-      <section className="promo-packages container">
-        <div className="section-title">
-          <h2>Stall <span>Packages</span></h2>
-          <p>Choose the package that fits your brand</p>
-        </div>
-        <div className="promo-grid">
-          {offers.map((o, i) => (
-            <div
-              className={`promo-card ${o.highlight ? "promo-card--hot" : ""}`}
-              key={i}
-            >
-              {o.highlight && <div className="promo-hot-label">BEST VALUE</div>}
-              <div className="promo-badge">{o.badge}</div>
-              <h3>{o.title}</h3>
-              <div className="promo-price-row">
-                <strong>{o.price}</strong>
-                {o.original && <del>{o.original}</del>}
-              </div>
-              <p className="promo-price-note">{o.priceNote}</p>
-              <ul className="promo-features">
-                {o.features.map(f => (
-                  <li key={f}><span className="promo-check">✓</span>{f}</li>
-                ))}
-              </ul>
-              <p className="promo-deadline">{o.deadline}</p>
-              <a href="#" className={`promo-cta ${o.highlight ? "promo-cta--hot" : ""}`}>
-                BOOK THIS PACKAGE
-              </a>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* RED STRIP */}
-      <div className="red-strip">
-        <h3>More Than a Stall — It's a Stage for Your Brand</h3>
-        <p>Every package at MACHMA EXPO includes marketing benefits that amplify your reach far beyond the exhibition floor.</p>
-      </div>
+      PACKAGES
+      
 
       {/* PERKS */}
       <section className="promo-perks container">

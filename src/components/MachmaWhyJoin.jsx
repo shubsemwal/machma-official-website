@@ -226,7 +226,7 @@ export default function MachmaWhyJoin() {
             {/* Stats row */}
             <div className="wj-mini-stats">
               <div className="wj-mini-stat">
-                <strong>500+</strong><span>Exhibitors</span>
+                <strong>500+</strong><span>Stalls</span>
               </div>
               <div className="wj-mini-divider" />
               <div className="wj-mini-stat">
@@ -234,7 +234,7 @@ export default function MachmaWhyJoin() {
               </div>
               <div className="wj-mini-divider" />
               <div className="wj-mini-stat">
-                <strong>4</strong><span>Days</span>
+                <strong>10000+</strong><span>Products </span>
               </div>
             </div>
 

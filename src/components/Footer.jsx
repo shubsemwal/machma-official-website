@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="footer-col col-brand">
           <div className="brand-logo-box">
             <span className="brand-logo-text">
-              <span className="logo-mach">MACH</span>
+              <span className="logo-mach">MACHMA </span>
               <span className="logo-auto">EXPO</span>
             </span>
             <span className="logo-sub">2026</span>
@@ -32,7 +32,7 @@ const Footer = () => {
             <span className="organiser-label">Organised By</span>
             <div className="organiser-name">
               <span className="org-icon">🏢</span>
-              Fortune Exhibitor Pvt. Ltd.
+              FORTUNE EXHIBITORS PRIVATE LIMITED
             </div>
           </div>
 

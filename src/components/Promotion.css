@@ -116,7 +116,7 @@
 .promo-perk-icon { font-size: 2rem; margin-bottom: 0.8rem; }
 .promo-perk h4 {
   font-family: var(--font-cond); font-size: 0.95rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 0.5rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); margin-bottom: 0.5rem;
 }
 .promo-perk p { font-size: 0.85rem; font-weight: 300; line-height: 1.7; color: #aaa; }
 

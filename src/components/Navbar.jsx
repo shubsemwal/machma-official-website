@@ -10,6 +10,7 @@ const navLinks = [
   { label: "FOCUS US", href: "/focus-us" },
   { label: "PROMOTION", href: "/promotion" },
   { label: "GALLERY", href: "/gallery" },
+
 ];
 
 export default function Navbar() {
@@ -61,6 +62,11 @@ export default function Navbar() {
         </li>
 
         {/* Book Now Button */}
+        <li>
+          <Link to="/register-now" className="machma-logo-wrap" onClick={closeMenu}>
+            REGISTER NOW
+          </Link>
+        </li>
       
       </ul>
     </nav>

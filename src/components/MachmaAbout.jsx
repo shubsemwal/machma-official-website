@@ -77,7 +77,7 @@ export default function MachmaAbout({ exhibitionPhoto = null }) {
             <h2 className="ma-heading">
               The <em>13th Edition</em> of{" "}
               <span className="ma-heading--accent">India's Leading</span>
-              Exhibitor in Machine Tools, Automation Expo &amp; Laser Technology
+              Exhibition On Machine Tools, Automation Expo &amp; Laser Technology
             </h2>
             <div className="ma-heading-line" />
           </div>

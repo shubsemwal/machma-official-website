@@ -37,6 +37,7 @@ function App() {
   <Route path="/focus-us" element={<FocusUs />} />
   <Route path="/promotion" element={<Promotion />} />
   <Route path="/gallery" element={<Gallery />} />
+  <Route path="/register-now" element={<BookNow />} />
 </Routes>
 <Footer />
     </>
